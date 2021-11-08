@@ -1,4 +1,4 @@
-#-*-coding:utf-8-*-
+# -*-coding:utf-8-*-
 from lib.UiautomatorLib import *
 from suite.douyin.projectlib.libprojectresource import *
 
@@ -8,7 +8,7 @@ class CommonProjectresource(object):
 
     # 当前运行的脚本路径
     config.COMMOM_CFG["CURRENT_PROJECT_NAME"] = 'douyin'
-    log.logger.info('CURRENT_PROJECT_NAME：%s'%config.COMMOM_CFG["CURRENT_PROJECT_NAME"])
+    log.logger.info('CURRENT_PROJECT_NAME：%s' % config.COMMOM_CFG["CURRENT_PROJECT_NAME"])
 
     def __init__(self):
         self.auto = UiautoLib()
@@ -19,7 +19,7 @@ class CommonProjectresource(object):
         password = dict.get("password")
         log.logger.info("input values:" + str(dict))
         dict.clear()
-        #点击“好的”
+        # 点击“好的”
         self.auto.Click("首页_个人信息保护指引_BUTTON_好的")
         # # 点击“始终允许”
         self.auto.ExistClick("系统_获取手机号及通话状态_BUTTON_始终允许")
@@ -48,9 +48,9 @@ class CommonProjectresource(object):
         self.auto.ExistClick("其他_隐私政策_BUTTON_返回")
         self.auto.Click("首页_状态栏_BUTTON_我")
         time.sleep(5)
-        #获取登录后的用户名
+        # 获取登录后的用户名
         username = self.auto.GetText("我_登录页面_TEXT_用户名")
-        #获取登录后的抖音号
+        # 获取登录后的抖音号
         douyin_number = self.auto.GetText("我_登录页面_TEXT_抖音号")
         # 点击“首页”
         self.auto.Click("首页_状态栏_BUTTON_首页")
@@ -72,6 +72,7 @@ class CommonProjectresource(object):
             i += 1
             if swipe_num and i >= swipe_num:
                 flag = False
+
 
 if __name__ == '__main__':
     print(os.path.split(os.path.abspath(".."))[1])

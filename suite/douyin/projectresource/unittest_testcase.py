@@ -1,6 +1,7 @@
-#-*-coding:utf-8-*-
+# -*-coding:utf-8-*-
 import unittest
 from suite.douyin.projectresource.commonprojectresource import *
+
 
 class OTestCase(unittest.TestCase):
 
@@ -9,6 +10,7 @@ class OTestCase(unittest.TestCase):
 
     def tearDown(self):
         pass
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -93,6 +93,7 @@ else:
 import copy
 import logging
 
+
 # ------------------------------------------------------------------------
 # The redirectors below are used to capture output during testing. Output
 # sent to sys.stdout and sys.stderr are automatically captured. However
@@ -798,7 +799,7 @@ class _TestResult(TestResult):
         # else:
         try:
             # driver = getattr(test, "driver")
-            #test.imgs.append(driver.get_screenshot_as_base64())
+            # test.imgs.append(driver.get_screenshot_as_base64())
             image_path = self.send_cmd_screenshots()
             image_name = image_path + "/app.png"
             test.imgs.append(image_name)
@@ -838,7 +839,8 @@ class _TestResult(TestResult):
 
 
 class HTMLTestRunner(Template_mixin):
-    def __init__(self, stream=sys.stdout, verbosity=2, title=None, description=None, logger=None,  retry=0, save_last_try=False):
+    def __init__(self, stream=sys.stdout, verbosity=2, title=None, description=None, logger=None, retry=0,
+                 save_last_try=False):
         self.stream = stream
         self.retry = retry
         self.save_last_try = save_last_try
@@ -1049,7 +1051,7 @@ class HTMLTestRunner(Template_mixin):
             tmp = u""
             for i, img in enumerate(t.imgs):
                 if i == 0:
-                    #tmp += """ <img src="data:image/jpg;base64,%s" style="display: block;" class="img"/>\n""" % img
+                    # tmp += """ <img src="data:image/jpg;base64,%s" style="display: block;" class="img"/>\n""" % img
                     # tmp += """<a href=%s target="_blank"> 屏幕截图 </a>\n""" % img
                     tmp += """<img src=%s style="display: block;" class="img"/>\n""" % img
                 else:

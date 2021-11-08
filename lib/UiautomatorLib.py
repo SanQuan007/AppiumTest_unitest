@@ -1,7 +1,8 @@
-#coding:utf-8
+# coding:utf-8
 from appium import webdriver
 from lib.SysLib import *
 import time
+
 
 class UiautoLib(object):
     def __init__(self):
@@ -20,7 +21,7 @@ class UiautoLib(object):
         location_w = location["x"] + size["width"]
         location_h = location["y"] + size["width"]
         log.logger.debug('location_x：%s，location_y：%s，location_w：%s，location_h：%s' % \
-                        (location_x, location_y, location_w, location_h))
+                         (location_x, location_y, location_w, location_h))
         self.driver.tap([(location_x, location_y), (location_w, location_h)], 100)
 
     def ExistClick(self, locator):
@@ -47,23 +48,23 @@ class UiautoLib(object):
         driver_element.clear()
         driver_element.send_keys(text)
 
-    def SwipeUp(self, num =1):
+    def SwipeUp(self, num=1):
         """向上滑动屏幕"""
         self.swipe_diff_direection("up", num)
 
-    def SwipeDown(self, num =1):
+    def SwipeDown(self, num=1):
         """向下滑动屏幕"""
         self.swipe_diff_direection("down", num)
 
-    def SwipeLeft(self, num =1):
+    def SwipeLeft(self, num=1):
         """向左滑动屏幕"""
         self.swipe_diff_direection("left", num)
 
-    def SwipeRight(self, num =1):
+    def SwipeRight(self, num=1):
         """向右滑动屏幕"""
         self.swipe_diff_direection("right", num)
 
-    def swipe_diff_direection(self, direction, n=1 ,t=500):
+    def swipe_diff_direection(self, direction, n=1, t=500):
         '''向不同的方向滑动屏幕'''
         window_size = self.driver.get_window_size()
         xc = window_size['width'] * 0.5  # x 坐标
@@ -73,8 +74,8 @@ class UiautoLib(object):
         y1 = window_size['height'] * 0.75  # 起始 y 坐标
         y2 = window_size['height'] * 0.25  # 终点 y 坐标
         if direction.lower() == "up":
-            log.logger.debug('direction：%s，x1：%s，y1：%s，x2：%s，y2：%s，'\
-                             %(direction, xc ,y1 ,xc ,y2))
+            log.logger.debug('direction：%s，x1：%s，y1：%s，x2：%s，y2：%s，' \
+                             % (direction, xc, y1, xc, y2))
             self.driver.swipe(xc, y1, xc, y2, t)
         if direction.lower() == "down":
             for i in range(n):
@@ -152,6 +153,7 @@ class UiautoLib(object):
         """获取页面源码"""
         self.driver.page_source()
         print(self.driver.page_source())
+
 
 if __name__ == '__main__':
     error_message = "页面未找到该元素：%s\n屏幕截图地址：%s" % (1, 2)
