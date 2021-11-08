@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+
+
 PROJECT_LOCATOR = {
     "首页": {
         "首页_个人信息保护指引_BUTTON_好的": "id|com.ss.android.ugc.aweme.lite:id/rd",

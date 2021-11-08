@@ -1,4 +1,4 @@
-# coding:utf-8
+# -*- coding: utf-8 -*-
 from appium import webdriver
 from lib.SysLib import *
 import time
@@ -6,7 +6,7 @@ import time
 
 class UiautoLib(object):
     def __init__(self):
-        self.driver = webdriver.Remote(config.COMMOM_CFG["URL"], get_appium_capability())
+        self.driver = webdriver.Remote(config.COMMON_CFG["URL"], get_appium_capability())
         self.find_element_number = 5
         self.sleep_time = 2
 

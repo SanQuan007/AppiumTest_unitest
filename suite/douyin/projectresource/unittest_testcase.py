@@ -1,4 +1,4 @@
-# -*-coding:utf-8-*-
+# -*- coding: utf-8 -*-
 import unittest
 from suite.douyin.projectresource.commonprojectresource import *
 

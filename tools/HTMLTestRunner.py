@@ -764,7 +764,7 @@ class _TestResult(TestResult):
         """获取当前界面的截图以及uix文件"""
         current_time = datetime.datetime.now().strftime('%Y-%m-%d_%H_%M_%S')
         from config import config
-        file_name = config.COMMOM_CFG["LOG_PATH"] + "UIautomatorPng/" + current_time + "/ScreenPng"
+        file_name = config.COMMON_CFG["LOG_PATH"] + "UIautomatorPng/" + current_time + "/ScreenPng"
         self.mkdir(file_name)
         cmd_1 = "adb shell /system/bin/uiautomator dump /sdcard/app.uix"
         cmd_2 = "adb pull /sdcard/app.uix " + file_name + "/app.uix"

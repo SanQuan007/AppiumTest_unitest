@@ -1,4 +1,4 @@
-# -*-coding:utf-8-*-
+# -*- coding: utf-8 -*-
 import random
 import os
 import datetime
@@ -17,7 +17,7 @@ CURRENT_FILE_NAME = sys.argv[0]
 
 def get_locator_value(locator_key):
     """根据loctor.py的key值获取value"""
-    project_name = config.COMMOM_CFG["CURRENT_PROJECT_NAME"]
+    project_name = config.COMMON_CFG["CURRENT_PROJECT_NAME"]
     project_varible_path = 'suite.%s.projectvaible.locator' % project_name
     log.logger.debug('project_varible_path：%s' % project_varible_path)
     import_project_varible = importlib.import_module(project_varible_path)
@@ -37,7 +37,7 @@ def get_locator_value(locator_key):
 def send_cmd_screenshots():
     """获取当前界面的截图以及uix文件"""
     current_time = datetime.datetime.now().strftime('%Y-%m-%d_%H_%M_%S')
-    file_name = config.COMMOM_CFG["LOG_PATH"] + "UIautomatorPng/" + current_time + "/ScreenPng"
+    file_name = config.COMMON_CFG["LOG_PATH"] + "UIautomatorPng/" + current_time + "/ScreenPng"
     log.logger.debug('log_screen_file_name：%s' % file_name)
     mkdir(file_name)
     cmd_1 = "adb shell /system/bin/uiautomator dump /sdcard/app.uix"
@@ -51,7 +51,7 @@ def send_cmd_screenshots():
 
 def get_appium_capability():
     """获取Appium 服务器初始化参数"""
-    project_name = config.COMMOM_CFG["CURRENT_PROJECT_NAME"]
+    project_name = config.COMMON_CFG["CURRENT_PROJECT_NAME"]
     project_varible_path = 'suite.%s.projectconfig.config' % project_name
     log.logger.debug('project_varible_path：%s' % project_varible_path)
     import_project_locator = importlib.import_module(project_varible_path)

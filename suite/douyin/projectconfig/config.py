@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+
+
 APPIUM_CAPABILITY = {
     "platformName": "Android",
     "platformVersion": "10",

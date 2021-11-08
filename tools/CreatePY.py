@@ -1,11 +1,11 @@
-# -*-coding:utf-8-*-
+# -*- coding: utf-8 -*-
 __author__ = 'SanQuan'
 __date__ = '2020/6/29'
 import openpyxl
 import os
 import logging
 import re
-from config.config import COMMOM_CFG
+from config.config import COMMON_CFG
 
 logging.basicConfig(format='%(asctime)s - %(pathname)s[line:%(lineno)d] ''- %(levelname)s: %(message)s',
                     level=logging.INFO)
@@ -13,11 +13,11 @@ logging.basicConfig(format='%(asctime)s - %(pathname)s[line:%(lineno)d] ''- %(le
 
 # 遍历project
 def traverse_project():
-    suite_dir = COMMOM_CFG.get("PROJECT_PATH")
+    suite_dir = COMMON_CFG.get("PROJECT_PATH")
     projects = list(set(os.listdir(suite_dir)) - set([name for name in os.listdir(suite_dir) if name.startswith("_")]))
     # 执行匹配条件的测试用例
-    if COMMOM_CFG["CURRENT_PROJECT_NAME"]:
-        project_case_dir = os.path.join(os.path.join(suite_dir, COMMOM_CFG["CURRENT_PROJECT_NAME"]), "testcase")
+    if COMMON_CFG["CURRENT_PROJECT_NAME"]:
+        project_case_dir = os.path.join(os.path.join(suite_dir, COMMON_CFG["CURRENT_PROJECT_NAME"]), "testcase")
         logging.debug("project_case_dir:%s" % project_case_dir)
         traverse_case_dir(project_case_dir)
     else:
@@ -171,7 +171,7 @@ def create_py_test(case_file_name, case_template, cases_value):
         logging.debug("case_value:%s" % case_value)
         with open(case, 'w', encoding='UTF-8') as f:
             f.write(
-                "#-*-coding:utf-8-*-\n"
+                "# -*- coding: utf-8 -*-\n"
                 "from suite.douyin.projectresource.unittest_testcase import * \n\n"
                 "class TestCase(OTestCase):\n"
                 "\tdef testRun(self):\n")

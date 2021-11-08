@@ -1,4 +1,4 @@
-# -*-coding:utf-8-*-
+# -*- coding: utf-8 -*-
 from lib.UiautomatorLib import *
 from suite.douyin.projectlib.libprojectresource import *
 
@@ -7,8 +7,8 @@ class CommonProjectresource(object):
     """通用模块"""
 
     # 当前运行的脚本路径
-    config.COMMOM_CFG["CURRENT_PROJECT_NAME"] = 'douyin'
-    log.logger.info('CURRENT_PROJECT_NAME：%s' % config.COMMOM_CFG["CURRENT_PROJECT_NAME"])
+    config.COMMON_CFG["CURRENT_PROJECT_NAME"] = 'douyin'
+    log.logger.info('CURRENT_PROJECT_NAME：%s' % config.COMMON_CFG["CURRENT_PROJECT_NAME"])
 
     def __init__(self):
         self.auto = UiautoLib()

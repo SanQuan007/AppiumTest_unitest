@@ -1,4 +1,4 @@
-# -*-coding:utf-8-*-
+# -*- coding: utf-8 -*-
 import logging
 from logging import handlers
 from config import config
@@ -15,10 +15,10 @@ class Logger(object):
         'crit': logging.CRITICAL
     }  # 日志级别关系映射
 
-    def __init__(self, level=config.COMMOM_CFG.get("LOG_LEVEL").lower(), when='D', backCount=3,
+    def __init__(self, level=config.COMMON_CFG.get("LOG_LEVEL").lower(), when='D', backCount=3,
                  fmt='%(asctime)s - %(pathname)s[line:%(lineno)d] - %(levelname)s: %(message)s'):
         current_time = datetime.datetime.now().strftime('%Y-%m-%d')
-        filename = config.COMMOM_CFG["LOG_PATH"] + current_time + "_log.log"
+        filename = config.COMMON_CFG["LOG_PATH"] + current_time + "_log.log"
         self.logger = logging.getLogger(filename)
         # 防止重复
         if self.logger.handlers:
