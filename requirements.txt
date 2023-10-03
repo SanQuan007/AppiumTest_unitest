@@ -3,5 +3,5 @@ comtypes==1.1.7
 selenium==3.141.0
 typing==3.7.4.1
 uiautomation==2.0.4
-urllib3==1.26.5
+urllib3==1.26.17
 openpyxl==3.0.4
